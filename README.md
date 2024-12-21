@@ -25,23 +25,7 @@ Hyödynsin Chat GPT:tä lähinnä debuggaukseen ja etsimään vian lähdettä ki
 **- Miksei NoteCreatorissa syötteen teksti ilmesty näkyviin?**
 - UseState-hook puuttui noteText-muuttujasta, lisäsin sen
 - "note.text" johon syötteen teksti tulee, oli väärässä kohdassa (suoraan elementissä), joten siirsin sen elementin sisään
-- addNote oli käytetty väärin onChange-käsittelijässä ja se lisäsi uusia muistiinpanoja aina, kun syötettä muutettiin:
-
-```
-<input 
-type="text" 
-onChange={(e) => addNote(e.target.value)}/>
-```
-
-Vaihdoin sen tähän: 
-
-```
-<input
-type="text"
-value={noteText}
-onChange={(e) => setNoteText(e.target.value)}
-/> 
-```
+- addNote oli käytetty väärin inputin onChange-käsittelijässä ja se lisäsi uusia muistiinpanoja aina, kun syötettä muutettiin. Vaihdoin sen tilalle setNoteText 
 
 **- Fetchaaminen Zustandiin API:sta, selitä syntaksi ja selvitä miksei mitään ilmesty näkyviin**
 - mappauksesta puuttui "return" sana
@@ -49,9 +33,6 @@ onChange={(e) => setNoteText(e.target.value)}
 
 **- Miksi uutta kurssia lisätessä pudotusvalikkoon tulee vain tyhjä kohta, ei tekstiä?**
 - id ja name kenttiä ei oltu lisätty oikein, ne piti lisätä objektina jossa on 'id' ja 'name' kentät, joten loin oikean muotoisen objektin CourseCreatoriin ja päivitin useCourseStoren syntaksin
-
-**- Syntaksi: miten lisätä useNoteStoreen tila jossa on vain äsken lisätyt muistiinpanot, ei API:sta haettuja**
-- käytin annettua syntaksia
 
 **- Miksi API:n kautta fetchatut muistiinpanot näkyvät oikein mutta oman muistiinpanon lisäys kaataa ohjelman?**
 - lisättävän Noteobjectin rakenne oli väärin ja ei vastannut APIn palauttaman datan rakennetta. Note.course.name kenttää ei löytynyt NoteItemistä koska olin tehnyt manuaalisia määrityksiä useNoteStoressa addNote-kohtaan. Poistin määritykset ja kirjoitin määritteiden tilalle pelkästään NoteObject
