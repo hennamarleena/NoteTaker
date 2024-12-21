@@ -1,13 +1,13 @@
-## NoteTaker
+# NoteTaker
 
-# Projektista
+## Projektista
 
 Ohjelma on frontend-kurssille tehty React-pohjainen luentomuistiinpanojen hallintasovellus, joka on toteutettu annetun dokumentoinnin pohjalta. 
 Sovelluksessa voi tallentaa paikallisesti omia kursseja ja muistiinpanoja ja noutaa REST API:sta valmiita kursseja ja muistiinpanoja.
 
 Sovellus käyttää Mantine-komponenttikirjastoa käyttöliittymän rakentamiseen ja tilanhallintakirjastona Zustandia.
 
-# Asennus ja käyttöönotto
+## Asennus ja käyttöönotto
 
 - lataa zip-tiedosto ja pura se
 
@@ -16,7 +16,7 @@ Suorita projektihakemistossa:
 - npm run dev
 
 
-# Tekoälyn käytöstä
+## Tekoälyn käytöstä
 
 Hyödynsin Chat GPT:tä lähinnä debuggaukseen ja etsimään vian lähdettä kirjoittamastani rungosta seuraavissa ongelmatilanteissa:
 
