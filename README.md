@@ -27,21 +27,21 @@ Hyödynsin Chat GPT:tä lähinnä debuggaukseen ja etsimään vian lähdettä ki
 -> "note.text" johon syötteen teksti tulee, oli väärässä kohdassa (suoraan elementissä), joten siirsin sen elementin sisään
 -> addNote oli käytetty väärin onChange-käsittelijässä ja se lisäsi uusia muistiinpanoja aina, kun syötettä muutettiin:
 
-<!-- 
+```
 <input 
 type="text" 
 onChange={(e) => addNote(e.target.value)}/>
--->
+```
 
 Vaihdoin sen tähän: 
 
-<!-- 
+```
 <input
 type="text"
 value={noteText}
 onChange={(e) => setNoteText(e.target.value)}
 /> 
--->
+```
 
 **- Fetchaaminen Zustandiin API:sta, selitä syntaksi ja selvitä miksei mitään ilmesty näkyviin**
 -> mappauksesta puuttui "return" sana
