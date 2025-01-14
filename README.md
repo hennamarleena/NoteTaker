@@ -1,3 +1,9 @@
+**Tulevia korjauksia:**
+- versionhallinnan muistiinpanot tulee tiedolla "Unknown Course (id: )"
+- filteröinti ja muistiinpanojen poistaminen ei toimi oikein. Jos valitulla kurssilla ei ole yhtään muistiinpanoa, filter näyttää kaikki muistiinpanot
+- jos kaikki muistiinpanot on poistettu, muistiinpanon luonti ei onnistu
+- "No notes!" teksti ei ole kurssikohtainen vaan se näkyy ainoastaan jos kaikki on poistettu
+
 # NoteTaker
 
 ## Projektista
