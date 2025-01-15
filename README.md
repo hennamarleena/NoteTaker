@@ -1,6 +1,6 @@
 **Tulevia korjauksia:**
-- versionhallinnan muistiinpanot tulee tiedolla "Unknown Course (id: )". Toimi kyllä ennen mutta meni rikki kun disabloin muistiinpanonluontinäkymästä "All" -optionin
-- filteröinti ja muistiinpanojen poistaminen ei toimi oikein. Jos valitulla kurssilla ei ole yhtään muistiinpanoa, filter näyttää kaikki muistiinpanot. Esim. jos valittuna filterissä on Versionhallinta ja poistan kaikki siihen liittyvät muistiinpanot, näkyviin ilmestyy Ruotsiin liittyvä muistiinpano.
+- versionhallinnan muistiinpanot tulee tiedolla "Unknown Course (id: )"
+- filteröinti ja muistiinpanojen poistaminen ei toimi oikein. Jos valitulla kurssilla ei ole yhtään muistiinpanoa, filter näyttää kaikki muistiinpanot
 - "No notes!" teksti ei ole kurssikohtainen vaan se näkyy ainoastaan jos kaikki on poistettu
 
 # NoteTaker
@@ -51,7 +51,3 @@ Hyödynsin Chat GPT:tä lähinnä debuggaukseen ja etsimään vian lähdettä ki
 
 **- Miksi create notes -näkymän select-valinta filteröi etäältä muistiinpanojen listausnäkymää vaikka ei pitäisi?**
 - lisäsin Notelist-näkymässä propsina SelectCourseMenuun enableFiltering={true} ja selectCourseMenun handleChangeen ehdoksi, että jos enablefiltering on true, aktivoi filter
-
-**- Filteröinti ja muistiinpanojen poistaminen ei toimi oikein. Jos valitulla kurssilla ei ole yhtään muistiinpanoa, filter näyttää kaikki muistiinpanot.**
-
-
