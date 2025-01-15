@@ -1,7 +1,6 @@
 **Tulevia korjauksia:**
-- versionhallinnan muistiinpanot tulee tiedolla "Unknown Course (id: )"
-- filteröinti ja muistiinpanojen poistaminen ei toimi oikein. Jos valitulla kurssilla ei ole yhtään muistiinpanoa, filter näyttää kaikki muistiinpanot
-- jos kaikki muistiinpanot on poistettu, muistiinpanon luonti ei onnistu
+- versionhallinnan muistiinpanot tulee tiedolla "Unknown Course (id: )". Toimi kyllä ennen mutta meni rikki kun disabloin muistiinpanonluontinäkymästä "All" -optionin
+- filteröinti ja muistiinpanojen poistaminen ei toimi oikein. Jos valitulla kurssilla ei ole yhtään muistiinpanoa, filter näyttää kaikki muistiinpanot. Esim. jos valittuna filterissä on Versionhallinta ja poistan kaikki siihen liittyvät muistiinpanot, näkyviin ilmestyy Ruotsiin liittyvä muistiinpano.
 - "No notes!" teksti ei ole kurssikohtainen vaan se näkyy ainoastaan jos kaikki on poistettu
 
 # NoteTaker
