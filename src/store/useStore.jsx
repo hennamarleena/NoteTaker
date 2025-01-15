@@ -50,25 +50,44 @@ const useNoteStore = create((set) => ({
             text: NoteObject.text, 
             timestamp: NoteObject }],
     })),
-    deleteNote: (noteToDelete) =>
-      set((state) => ({
-        noteList: state.noteList.filter( (n) => n.id !== noteToDelete.id),
-        filteredNotes: state.filteredNotes.filter( (n) => n.id !== noteToDelete.id),
-      })),
-    filterNotes: (courseID) => {
+    deleteNote: (noteToDelete) => {
       set((state) => {
-        if (courseID) {
-          return {
-        filteredNotes: state.noteList.filter((note) => note.course.id == courseID) 
+          const updatedNoteList = state.noteList.filter((n) => n.id !== noteToDelete.id);
+          const updatedFilteredNotes = state.filteredNotes.filter((n) => n.id !== noteToDelete.id);
+
+          if (!state.filteredNotes.length) {
+            return { noteList: updatedNoteList, filteredNotes: updatedNoteList };
           }
-        } else {
-          return {
-            filteredNotes: [],
-          }
+
+       if (updatedFilteredNotes.length === 0) {
+        return { noteList: updatedNoteList, filteredNotes: [] };
         }
-      })
-    }
-  }));
+
+        return {
+            noteList: updatedNoteList,
+            filteredNotes: updatedFilteredNotes,
+          };
+      });
+  },
+  filterNotes: (courseID) => {
+    set((state) => {
+        if (!courseID) {
+            return { filteredNotes: state.noteList };
+        }
+        
+        const filtered = state.noteList.filter((note) => note.course.id.toString() === courseID.toString());
+
+        if (filtered.length === 0) {
+            return { filteredNotes: [] };
+        }
+        
+        return { filteredNotes: filtered };
+    });
+},
+
+
+  }
+));
 
 export default useNoteStore;
 

@@ -20,7 +20,6 @@ Suorita projektihakemistossa:
 - npm install
 - npm run dev
 
-
 ## Tekoälyn käytöstä
 
 Hyödynsin Chat GPT:tä lähinnä debuggaukseen ja etsimään vian lähdettä kirjoittamastani rungosta seuraavissa ongelmatilanteissa:
@@ -52,3 +51,7 @@ Hyödynsin Chat GPT:tä lähinnä debuggaukseen ja etsimään vian lähdettä ki
 
 **- Miksi create notes -näkymän select-valinta filteröi etäältä muistiinpanojen listausnäkymää vaikka ei pitäisi?**
 - lisäsin Notelist-näkymässä propsina SelectCourseMenuun enableFiltering={true} ja selectCourseMenun handleChangeen ehdoksi, että jos enablefiltering on true, aktivoi filter
+
+**- Filteröinti ja muistiinpanojen poistaminen ei toimi oikein. Jos valitulla kurssilla ei ole yhtään muistiinpanoa, filter näyttää kaikki muistiinpanot.**
+
+

@@ -13,8 +13,9 @@ export default function SelectCourseMenu({ onSelect, isDisabled, enableFiltering
         if (onSelect) {
             onSelect(selectedCourse)
         }
+        
         if (enableFiltering) {
-            filterNotes(e.target.value)
+            filterNotes(selectedCourseId)
         }
       };
 

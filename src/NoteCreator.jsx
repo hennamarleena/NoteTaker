@@ -16,7 +16,7 @@ export default function NoteCreator() {
     const handleSave = () => {
         if (!noteText.trim()) return;
 
-        const lastNote = noteList[noteList.length - 1]
+        const lastNote = noteList.length > 0 ? noteList[noteList.length - 1] : { id: -1 };
 
         const NoteObject = {
             id: lastNote.id + 1,
