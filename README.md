@@ -5,6 +5,8 @@
 
 # NoteTaker
 
+![screenshot](screenshot.jpg)
+
 ## Projektista
 
 Ohjelma on frontend-kurssille tehty React-pohjainen luentomuistiinpanojen hallintasovellus, joka on toteutettu annetun dokumentoinnin pohjalta. 
