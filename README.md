@@ -1,7 +1,6 @@
-**Tulevia korjauksia:**
-- versionhallinnan muistiinpanot tulee tiedolla "Unknown Course (id: )"
-- filteröinti ja muistiinpanojen poistaminen ei toimi oikein. Jos valitulla kurssilla ei ole yhtään muistiinpanoa, filter näyttää kaikki muistiinpanot
-- "No notes!" teksti ei ole kurssikohtainen vaan se näkyy ainoastaan jos kaikki on poistettu
+**Tulevia parannuksia:**
+- Jos klikkaat "List Notes" -näkymässä suodatuksen päälle, käyt toisessa näkymässä ja palaat takaisin, äskeiset suodatetut kurssit näkyy mutta select-komponentissa on väärä teksti koska se ei muista oikeaa tilaa
+
 
 # NoteTaker
 
@@ -53,3 +52,7 @@ Hyödynsin Chat GPT:tä lähinnä debuggaukseen ja etsimään vian lähdettä ki
 
 **- Miksi create notes -näkymän select-valinta filteröi etäältä muistiinpanojen listausnäkymää vaikka ei pitäisi?**
 - lisäsin Notelist-näkymässä propsina SelectCourseMenuun enableFiltering={true} ja selectCourseMenun handleChangeen ehdoksi, että jos enablefiltering on true, aktivoi filter
+
+**- Kun siirtyy listausnäkymään ja suodatusvalintaa ei ole vielä klikattu, tulee näkyviin "no notes!". Ne saa näkyviin jos fetchaa API:sta datan filteredNotes-tilaan mutta silloin uudet muistiinpanot eivät näy.**
+- NoteStoren addNotessa: lisäsin updatedNotes-muuttujan ja asetin sen filteredNotesin arvoksi jotta myös suodatetut muistiinpanot päivittyy uudella merkinnällä
+- fetchNotes päivittää nyt filteredNotes:in API-datalla vain, jos se on tyhjä eli suodatus ei ole käynnissä

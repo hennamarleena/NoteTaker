@@ -1,20 +1,24 @@
 import { useState } from 'react';
 import useStore from './store/useStore';
 import SelectCourseMenu from './SelectCourseMenu';
-import { Textarea, Button, Title, Box } from '@mantine/core';
+import { Textarea, Button, Title, Box, Text } from '@mantine/core';
 
 export default function NoteCreator() {
 
     const [noteText, setNoteText] = useState("");
     const [selectedCourse, setSelectedCourse] = useState({ id:"", name:"" });
     const [disablingCourseMenu, setDisablingCourseMenu] = useState(false);
-    const disablingOption = useState(true);
     const noteList = useStore((state) => state.noteList);
     const addNote = useStore((state) => state.addNote);
     const addRecentNote = useStore((state) => state.addRecentNote)
+    const [error, setError] = useState("");
 
     const handleSave = () => {
-        if (!noteText.trim()) return;
+        if (noteText.length === 0 || selectedCourse.id === "") {
+            setError("Please select a course and write a note.");
+            return;
+        }
+        setError("");
 
         const lastNote = noteList.length > 0 ? noteList[noteList.length - 1] : { id: -1 };
 
@@ -39,7 +43,9 @@ export default function NoteCreator() {
 
             <p>Add new notes for class</p>
             
-            <SelectCourseMenu onSelect={setSelectedCourse} isDisabled={disablingCourseMenu} isOptionDisabled={disablingOption} />
+            <SelectCourseMenu onSelect={setSelectedCourse} isDisabled={disablingCourseMenu} changeOptionLabel={"Choose a course:"}/>
+
+            {error && <Text c="red" mt="sm">{error}</Text>}
         
             <Textarea
                 size="lg"
