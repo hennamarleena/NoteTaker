@@ -55,4 +55,4 @@ Hyödynsin Chat GPT:tä lähinnä debuggaukseen ja etsimään vian lähdettä ki
 
 **- Kun siirtyy listausnäkymään ja suodatusvalintaa ei ole vielä klikattu, tulee näkyviin "no notes!". Ne saa näkyviin jos fetchaa API:sta datan filteredNotes-tilaan mutta silloin uudet muistiinpanot eivät näy.**
 - NoteStoren addNotessa: lisäsin updatedNotes-muuttujan ja asetin sen filteredNotesin arvoksi jotta myös suodatetut muistiinpanot päivittyy uudella merkinnällä
-- fetchNotes päivittää nyt filteredNotes:in API-datalla vain, jos se on tyhjä eli suodatus ei ole käynnissä
+- fetchNotes päivittää nyt filteredNotes:in API-datalla vain, jos se on tyhjä eli suodatus ei ole käynnissä (ei ole ehkä paras ratkaisu)
