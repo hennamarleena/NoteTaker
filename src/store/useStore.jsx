@@ -58,6 +58,8 @@ const useStore = create((set) => ({
   set((state) => ({recentNotes: [...state.recentNotes, {text: NoteObject.text, timestamp: NoteObject }],
 })),
 
+clearRecentNotes: () => set({ recentNotes: [] }),
+
   filterNotes: (courseID) => {
     set((state) => {
       if (!courseID) {

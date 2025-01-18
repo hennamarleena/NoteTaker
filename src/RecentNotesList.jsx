@@ -1,9 +1,18 @@
 import useStore from "./store/useStore";
 import { Card } from "@mantine/core";
+import { useEffect } from "react";
 
 export default function RecentNotesList() {
 
 const recentNotes = useStore((state) => state.recentNotes);
+const clearRecentNotes = useStore((state) => state.clearRecentNotes);
+
+
+useEffect(() => {
+    return () => {
+      clearRecentNotes();
+    };
+  }, [clearRecentNotes]);
  
     return (
         <>
