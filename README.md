@@ -1,20 +1,17 @@
-**Tulevia parannuksia:**
-- Jos klikkaat "List Notes" -näkymässä suodatuksen päälle, käyt toisessa näkymässä ja palaat takaisin, äskeiset suodatetut kurssit näkyy mutta select-komponentissa on väärä teksti koska se ei muista oikeaa tilaa
-
-
 # NoteTaker
-
 ![screenshot](screenshot.jpg)
 
 ## Projektista
-
 Ohjelma on frontend-kurssille tehty React-pohjainen luentomuistiinpanojen hallintasovellus, joka on toteutettu annetun dokumentoinnin pohjalta. 
 Sovelluksessa voi tallentaa paikallisesti omia kursseja ja muistiinpanoja ja noutaa REST API:sta valmiita kursseja ja muistiinpanoja.
 
-Sovellus käyttää Mantine-komponenttikirjastoa käyttöliittymän rakentamiseen ja tilanhallintakirjastona Zustandia.
+## Teknologiat
+- React.js
+- Mantine-komponenttikirjasto
+- Zustand-tilanhallintakirjasto
+- React-router: näkymien välinen reititys
 
 ## Asennus ja käyttöönotto
-
 - lataa zip-tiedosto ja pura se
 
 Suorita projektihakemistossa:
@@ -22,7 +19,6 @@ Suorita projektihakemistossa:
 - npm run dev
 
 ## Tekoälyn käytöstä
-
 Hyödynsin Chat GPT:tä lähinnä debuggaukseen ja etsimään vian lähdettä kirjoittamastani rungosta seuraavissa ongelmatilanteissa:
 
 **- Pyysin selittämään Zustandin mallistoren syntaksin**
@@ -56,3 +52,7 @@ Hyödynsin Chat GPT:tä lähinnä debuggaukseen ja etsimään vian lähdettä ki
 **- Kun siirtyy listausnäkymään ja suodatusvalintaa ei ole vielä klikattu, tulee näkyviin "no notes!". Ne saa näkyviin jos fetchaa API:sta datan filteredNotes-tilaan mutta silloin uudet muistiinpanot eivät näy.**
 - NoteStoren addNotessa: lisäsin updatedNotes-muuttujan ja asetin sen filteredNotesin arvoksi jotta myös suodatetut muistiinpanot päivittyy uudella merkinnällä
 - fetchNotes päivittää nyt filteredNotes:in API-datalla vain, jos se on tyhjä eli suodatus ei ole käynnissä (ei ole ehkä paras ratkaisu)
+
+
+## Tulevia parannuksia:
+- Kun "List Notes" -näkymässä otetaan suodatus käyttöön, vaihdetaan toiseen näkymään ja palataan takaisin, suodatetut kurssit näkyvät oikein, mutta select-komponentti näyttää väärän tekstin, koska se ei muista valittua tilaa.
