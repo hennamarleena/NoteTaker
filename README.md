@@ -53,6 +53,5 @@ Hyödynsin Chat GPT:tä lähinnä debuggaukseen ja etsimään vian lähdettä ki
 - NoteStoren addNotessa: lisäsin updatedNotes-muuttujan ja asetin sen filteredNotesin arvoksi jotta myös suodatetut muistiinpanot päivittyy uudella merkinnällä
 - fetchNotes päivittää nyt filteredNotes:in API-datalla vain, jos se on tyhjä eli suodatus ei ole käynnissä (ei ole ehkä paras ratkaisu)
 
-
-## Tulevia parannuksia:
+## Tulevia parannuksia
 - Kun "List Notes" -näkymässä otetaan suodatus käyttöön, vaihdetaan toiseen näkymään ja palataan takaisin, suodatetut kurssit näkyvät oikein, mutta select-komponentti näyttää väärän tekstin, koska se ei muista valittua tilaa.
